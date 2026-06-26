@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="logo">Biblioteca</span>
+      <nav>
+        <button class="nav-btn active" data-section="libros">Libros</button>
+        <button class="nav-btn" data-section="autores">Autores</button>
+        <button class="nav-btn" data-section="categorias">Categorias</button>
+        <button class="nav-btn" data-section="perfiles">Perfiles</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 id="modal-title"></h2>
+          <button id="modal-close-btn">x</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="modal-cancel-btn">Cancelar</button>
+          <button class="btn btn-primary" id="modal-save-btn">Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="confirm-overlay" class="modal-overlay hidden">
+      <div class="modal modal-sm">
+        <div class="modal-header"><h2>Confirmar eliminacion</h2></div>
+        <div class="modal-body"><p id="confirm-msg"></p></div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="confirm-cancel-btn">Cancelar</button>
+          <button class="btn btn-danger" id="confirm-ok-btn">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="section-libros" class="section active">
+      <div class="section-header">
+        <div><h1>Libros</h1></div>
+        <button class="btn btn-primary" id="btn-nuevo-libro">Nuevo libro</button>
+      </div>
+      <div class="table-wrapper">
+        <table><thead><tr>
+          <th>ID</th><th>ISBN</th><th>Nombre</th><th>Precio</th><th>Stock</th><th>Categorias</th><th>Acciones</th>
+        </tr></thead><tbody id="body-libros"></tbody></table>
+      </div>
+    </section>
+
+    <section id="section-autores" class="section">
+      <div class="section-header">
+        <div><h1>Autores</h1></div>
+        <button class="btn btn-primary" id="btn-nuevo-autor">Nuevo autor</button>
+      </div>
+      <div class="table-wrapper">
+        <table><thead><tr>
+          <th>ID</th><th>Nombre</th><th>Apellido</th><th>Nacionalidad</th><th>Libro</th><th>Acciones</th>
+        </tr></thead><tbody id="body-autores"></tbody></table>
+      </div>
+    </section>
+
+    <section id="section-categorias" class="section">
+      <div class="section-header">
+        <div><h1>Categorias</h1></div>
+        <button class="btn btn-primary" id="btn-nueva-categoria">Nueva categoria</button>
+      </div>
+      <div class="table-wrapper">
+        <table><thead><tr>
+          <th>ID</th><th>Nombre</th><th>Descripcion</th><th>Acciones</th>
+        </tr></thead><tbody id="body-categorias"></tbody></table>
+      </div>
+    </section>
+
+    <section id="section-perfiles" class="section">
+      <div class="section-header">
+        <div><h1>Perfiles</h1></div>
+        <button class="btn btn-primary" id="btn-nuevo-perfil">Nuevo perfil</button>
+      </div>
+      <div class="table-wrapper">
+        <table><thead><tr>
+          <th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Telefono</th><th>Direccion</th><th>Libro</th><th>Acciones</th>
+        </tr></thead><tbody id="body-perfiles"></tbody></table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
